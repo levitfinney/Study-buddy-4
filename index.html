@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>AI School Helper</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nerdamer/1.1.13/nerdamer.core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nerdamer/1.1.13/Algebra.js"></script>
+
+<script defer src="script.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🎓 AI School Helper</h1>
+
+<div class="modeSwitch">
+
+<button onclick="setMode('student')">🎓 Student Mode</button>
+
+<button onclick="setMode('teacher')">👩‍🏫 Teacher Mode</button>
+
+</div>
+
+<button onclick="toggleDark()">🌙</button>
+
+</header>
+
+<div class="dashboard">
+
+<nav class="sidebar">
+
+<button onclick="showTab('home')">🏠 Home</button>
+<button onclick="showTab('tutor')">🤖 Tutor</button>
+<button onclick="showTab('math')">🧮 Math Solver</button>
+<button onclick="showTab('quiz')">📝 Quiz Maker</button>
+<button onclick="showTab('planner')">📅 Study Tasks</button>
+<button onclick="showTab('progress')">📊 Progress</button>
+<button onclick="showTab('notes')">📄 Notes</button>
+
+<button id="teacherTab" onclick="showTab('teacher')">👩‍🏫 Teacher</button>
+
+</nav>
+
+<main>
+
+<section id="home" class="tab">
+
+<h2>Welcome</h2>
+
+<p>This website helps students learn school subjects.</p>
+
+<p>Use the tutor to generate study guides and explanations.</p>
+
+</section>
+
+<section id="tutor" class="tab">
+
+<h2>AI Tutor</h2>
+
+<input id="question" placeholder="Enter topic">
+
+<button onclick="makeStudyGuide()">Generate Study Guide</button>
+
+<div class="card" id="answer"></div>
+
+<button onclick="copyNotes()">Copy Notes</button>
+
+</section>
+
+<section id="math" class="tab">
+
+<h2>Math Solver</h2>
+
+<input id="mathInput" placeholder="Example: 2x+5=15">
+
+<button onclick="solveMath()">Solve</button>
+
+<div id="mathAnswer"></div>
+
+<button onclick="copyMath()">Copy Result</button>
+
+</section>
+
+<section id="quiz" class="tab">
+
+<h2>Quiz Maker</h2>
+
+<input id="quizTopic" placeholder="Enter topic">
+
+<button onclick="generateQuiz()">Generate Quiz</button>
+
+<div id="quizArea"></div>
+
+</section>
+
+<section id="planner" class="tab">
+
+<h2>Study Tasks</h2>
+
+<input id="taskInput" placeholder="Add study task">
+
+<button onclick="addTask()">Add Task</button>
+
+<div id="taskList"></div>
+
+</section>
+
+<section id="progress" class="tab">
+
+<h2>Progress</h2>
+
+<div class="progressBar">
+<div id="xpBar"></div>
+</div>
+
+<p id="progressStats"></p>
+
+</section>
+
+<section id="notes" class="tab">
+
+<h2>Notes Export</h2>
+
+<textarea id="noteExport"></textarea>
+
+<button onclick="copyAllNotes()">Copy Notes</button>
+
+</section>
+
+<section id="teacher" class="tab">
+
+<h2>Teacher Dashboard</h2>
+
+<h3>Create Quiz</h3>
+
+<input id="teacherQuizTopic" placeholder="Quiz Topic">
+
+<button onclick="teacherQuiz()">Generate Quiz</button>
+
+<div id="teacherQuizArea"></div>
+
+<h3>Student Progress</h3>
+
+<div id="teacherProgress"></div>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+
+</html>
